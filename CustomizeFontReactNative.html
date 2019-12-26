@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+		<title>How to customize font in React Native? - Nu Le</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="index.html" class="logo"><strong>Nu Le</strong> <span>'s Blog</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+				            <li><a href="index.html">Home</a></li>
+							<li><a href="ProjectPosts.html">Projects</a></li>
+							<li><a href="RandomThoughts.html">Random Thoughts</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>How to customize font in React Native?</h1>
+									</header>
+									<span class="image main"><img src="https://facebook.github.io/react-native/blog/assets/oss-roadmap-hero.jpg" alt="ReactNativeLogo" /></span>
+                                     <!-- OPENING -->
+                                    <p>Before doinganything, I want to clarify that there are other ways of doing this task that I probably haven't known of. If you're reading this and do know the "less work" approach, please <strong>shoot me a message below</strong>, thanks ;) </p>
+                                    
+                                     <!-- STEPS -->
+                                    <dl>
+                                        <dt>STEP 1</dt>
+                                        <dd>
+                                            <p>Go to <a href="https://fonts.google.com/specimen/Montserrat">Google Fonts Site</a> 
+                                            to download your desired font. <br>For my case, the font I want to use is Montserrat. Did you know, as I am typing this, <strong>6.26 billion</strong> is the number of times Google Fonts API has served Montserrat on websites all over the world :allhailMontserrat:.</p>
+                                        </dd>
+                                        <dt>STEP 2</dt>
+                                        <dd>
+                                            <p>After extracting the file into your desinated folder, it is recommended that an assets folder is created to contain your extracted file so that the default path to get to your font folder is <code>yourProject/assets/fonts/</code> 
+                                            <br>  Also, get the post-script format of the names or rename them to your liking.</p>
+                                             <figure class="box alt">
+                                                <div class="row gtr-50 gtr-uniform">
+                                                    <div class="col-4"></div>
+                                                    <div class="col-4">
+                                                        <span class="image fit"><img src="images/FileDir.png" alt=""/>
+                                                            <figcaption><i><center>Post-script font name</center></i></figcaption>
+                                                        </span>   
+                                                    </div>
+                                                 </div>
+                                             </figure>
+                                        </dd>
+                                        
+                                        <dt>STEP 3</dt>
+                                        <dd>
+                                            <p>Inside node modules folder, find <strong>react-native.config.js</strong>.<br>
+                                            Under <strong>module.export</strong>, add this line: <br>
+                                                <code>assets: ['./assets/fonts/']</code></p> 
+                                            
+                                                <div class="box alt">
+                                                    <div class="row gtr-50 gtr-uniform">
+                                                        <div class="col-4"></div>
+                                                        <div class="col-4">
+                                                            <span class="image fit"><img src="images/addAssetsToConfigJson.png" alt=""/>
+                                                            </span>  
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            <p>Some people suggested using <strong>rnmp link</strong> into package.json; however, the next release of React Native will no longer support that configuration.</p>
+                                        </dd>
+                                        <dt>STEP 4</dt>
+                                        <dd>
+                                            <p>In your terminal run <code>react-native link</code>. This will finish linking and copy the font in your fonts folder. </p>
+                                        </dd>
+                                        <dt>STEP 5</dt>
+                                        <dd>
+                                            <p>You will need to run <code>npx react-native run-android</code> in terminal for the font to be added and the project to be rebundled.</p>
+                                        </dd>
+                                        <dt>STEP 6</dt>
+                                        <dd>
+                                            <p>After all of that hard work, the font better be working right. Well, to be sure, let's test it: <br>
+                                            
+                                            <div class="row">
+											    <div class="col-6 col-12-small">
+                                                    <span class="image fit"><img src="images/DefaultFont.png" alt=""/></span>
+                                                </div>
+                                                <div class="col-6 col-12-small">
+                                                    <span class="image fit"><img src="images/MontserratLoaded.png" alt=""/></span>
+                                                </div>
+                                            </div>
+                                           <p>Yayyy it worked!!</p>
+                                        </dd>
+                                    </dl> 
+                                    <!-- END -->
+                                    <p><em> That's it! Hope you enjoyed my little tutorial ^_^</em></p>
+								</div>
+							</section>
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="POST" action="https://formspree.io/mnqjaypp">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="_replyto" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">lengocnu8497.kl@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(714) 782-8136</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://twitter.com/home" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://github.com/lengocnu8497" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/nu-le-05b45413b/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
